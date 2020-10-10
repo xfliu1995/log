@@ -30,7 +30,7 @@
 
 这里我们分析  [GSE19161](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE19161) 数据集中与 [_EIF4G2_](https://www.ncbi.nlm.nih.gov/gene/1982) 基因的表达量显著相关的 gene set。其中输入文件包括所有基因的表达矩阵，EIF4G2在不同样本下的表达值，基因 ID 和基因名字对应表，以及特定功能的基因集合（可通过GSEA自带的数据库）。
 
-* 我们已经准备好了文件，参考[文件获取方式](https://cloud.tsinghua.edu.cn/d/747db0edd36449289b6f/?p=%2FFiles%2FPART_II%2F3.2.gsea&mode=list)，直接下载GSE19161.txt（表达矩阵），GSE19161.cls（EIF4G2在不同样本下的表达值），GSE19161.chip（基因 ID 和基因名字对应表）。
+* 我们已经准备好了文件([文件下载地址](https://cloud.tsinghua.edu.cn/d/747db0edd36449289b6f/?p=%2FFiles%2FPART_II%2F3.2.gsea&mode=list))，直接下载GSE19161.txt（表达矩阵），GSE19161.cls（EIF4G2在不同样本下的表达值），GSE19161.chip（基因 ID 和基因名字对应表）。
 
 * 也可以通过qGSEA(R package)在 [GEO](https://www.ncbi.nlm.nih.gov/geo/browse/?view=series&display=20) 中远程下载感兴趣的数据集（本例中我们使用 [GSE19161](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE19161))。
 
@@ -110,7 +110,7 @@ gsea
 
 #### \(1a\) 文件准备
 
-我们只需要两个输入：
+我们只需要两个输入,可从[这里](https://cloud.tsinghua.edu.cn/d/747db0edd36449289b6f/?p=%2FFiles%2FPART_II%2F3.2.gsea&mode=list)下载：
 
 1. 所有gene的rank list，文件后缀为.rnk。内容如下：
 ```text
@@ -219,7 +219,7 @@ ENSG00000178809.11|5544	64.42569891
 
 >*  [GMX文件](http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#GMX:_Gene_MatriX_file_format_.28.2A.gmx.29)。GMX文件格式是制表符分隔的文件格式，用于描述基因集。在GMX格式中，每一列代表一个基因集。
 
-我们给出一个GMX文件例子，文件存为后缀.gmt。
+我们给出一个GMX文件例子，文件存为后缀.gmx。
 ```text
 Tumor_vs_Normal_tissue_up_regulated_logFC_top20	Tumor_vs_Normal_tissue_down_regulated_logFC_top20
 Normal	Tissue
