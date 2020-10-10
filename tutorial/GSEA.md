@@ -2,7 +2,7 @@
 
 ## 1\) Pipeline
 
-![a8cf1bf98ac9bc82f7cae49abb771286.png](en-resource://database/3320:1)
+![Pipeline](https://github.com/xfliu1995/log/blob/master/tutorial/png/gsea_pipeline.png)
 
 
 ## 2\) Getting software & data 
@@ -30,9 +30,9 @@
 
 这里我们分析  [GSE19161](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE19161) 数据集中与 [_EIF4G2_](https://www.ncbi.nlm.nih.gov/gene/1982) 基因的表达量显著相关的 gene set。其中输入文件包括所有基因的表达矩阵，EIF4G2在不同样本下的表达值，基因 ID 和基因名字对应表，以及特定功能的基因集合（可通过GSEA自带的数据库）。
 
-* 我们已经准备好了文件，参考[文件获取方式]()，直接下载GSE19161.txt（表达矩阵），GSE19161.cls（EIF4G2在不同样本下的表达值），GSE19161.chip（基因 ID 和基因名字对应表）。
+* 我们已经准备好了文件，参考[文件获取方式](https://cloud.tsinghua.edu.cn/d/747db0edd36449289b6f/?p=%2FFiles%2FPART_II%2F3.2.gsea&mode=list)，直接下载GSE19161.txt（表达矩阵），GSE19161.cls（EIF4G2在不同样本下的表达值），GSE19161.chip（基因 ID 和基因名字对应表）。
 
-* 也可以通过qGSEA(R package)在 [GEO](https://www.ncbi.nlm.nih.gov/geo/browse/?view=series&display=20) 中远程下载感兴趣的数据集（本例中我们使用 [GSE19161](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE19161)。
+* 也可以通过qGSEA(R package)在 [GEO](https://www.ncbi.nlm.nih.gov/geo/browse/?view=series&display=20) 中远程下载感兴趣的数据集（本例中我们使用 [GSE19161](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE19161))。
 
 ```bash
 R
@@ -73,11 +73,11 @@ gsea
 
  这里我们分析 GSE19161 数据集中与 [_EIF4G2_](https://www.ncbi.nlm.nih.gov/gene/1982) 基因的表达量显著相关的 gene set。
 
-1）提前准备好软件和数据（见 [getting software & data]()），[准备好输入文件]()。
+1）提前准备好软件和数据（见 **getting software & data**），准备好输入文件。
 
 2）打开 GSEA，点击**Load data**，选择文件夹下相应文件 GSE19161.txt，GSE19161.cls，GSE19161.chip。
 
-![a72da496f267941d032374166051d526.gif](en-resource://database/3322:1)
+![Load data](https://github.com/xfliu1995/log/blob/master/tutorial/png/gsea-load-data.gif)
 
 3）点击**Run Gsea**。首先选择合适的参数，如下图所示。
 * **Expression dataset**选择上传生成的**GSE19161**；
@@ -89,14 +89,13 @@ gsea
 * 点击**Basci fields**，在**Metric for ranking genes**选择**Pearson**（由于我们使用的是连续性表型（EIF4G2 基因的表达量）。**Metric for ranking genes**代表基因排序的度量。表型是**分组信息**，GSEA在计算分组间的差异值时支持5种统计方式，分别是signal2noise、t-Test、ratio_of_class、 diff_of_class(log2转换后的值计算倍数)和log2_ratio_of_class；表型是**连续数值信息**，使用pearson相关性、Cosine、Manhattan 或Euclidean指标之一计算两个配置文件之间的相关性。
 * 其他为默认参数。
 
-![57ea0979ac246c6da1e985cd379973da.gif](en-resource://database/3324:1)
+![RUN](https://github.com/xfliu1995/log/blob/master/tutorial/png/gsea-run.gif)
 
 4) 最后点击**Run**。
 
 5)运行成功后，`Status` 会显示为 `Success`，点击其即可查看输出。在本例中，没有一个 gene set 通过了统计上的显著性检验\(FDR&lt;0.05\)。
 
-
-![b8342e01af3762b7924e0d9c7d6e87dc.gif](en-resource://database/3326:1)
+![Result](https://github.com/xfliu1995/log/blob/master/tutorial/png/gsea-result.gif)
 
 
 ## 4\) output format
@@ -249,8 +248,8 @@ ENSG00000257046.5|3774	ENSG00000215908.10|5606
 1）提前准备好软件和数据，根据上述过程将RNK文件(rank list文件)，GMX文件(gene set文件)，分别存为test.rnk和test.gmt，存在电脑本地。
 
 2）打开 GSEA，点击**Load data**，选择文件夹下相应文件test.rnk和test.gmx。
-![0a18773a71d6f9b762fecd30baed5313.gif](en-resource://database/3434:0)
 
+![Load Data](https://github.com/xfliu1995/log/blob/master/tutorial/png/load_data.gif)
 
 3）点击**Run GSEAPreranked**。首先选择合适的参数，如下图所示。
 
@@ -261,11 +260,11 @@ ENSG00000257046.5|3774	ENSG00000215908.10|5606
 * **Basic fields**中**Max size**需大于GMX文件中gene set大小，**Min size**需小于GMX文件gene set大小。
 * 其他为默认参数。
 
-![65f6f1d5bf06f08567fd54a00675c4bd.gif](en-resource://database/3432:0)
+![Run](https://github.com/xfliu1995/log/blob/master/tutorial/png/run.gif)
 
 4）运行成功后，`Status` 会显示为 `Success`，点击其即可查看输出。
-![d2a972a2c786c303c3bc4fc440a3d401.gif](en-resource://database/3436:0)
 
+![Result](https://github.com/xfliu1995/log/blob/master/tutorial/png/result.gif)
 
 ### \(2\) 分析离散型表型
 
@@ -288,8 +287,8 @@ GSEA也可以分析与离散型表型显著相关的 gene set （与差异表达
 
 由于基因芯片仅分析一部分基因，有些 gene set 会因为包含的基因过少而被剔除 。在极端情况下，可能所有的 gene set 都会被剔除，这时就会发生如下错误：
 
-![](../../.gitbook/assets/gsea-no-gene-set-error.png)
-![6d47b4a59cf99e130a08075612d07107.png](en-resource://database/3328:1)
+![Error](https://github.com/xfliu1995/log/blob/master/tutorial/png/gsea-no-gene-set-error.png)
+
 
 更多信息请参见[http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/1001](http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/1001)
 
