@@ -17,7 +17,6 @@
 ### 1c) 缺失值补全
 
 **(1) 平均值填充**
-
 可以用空缺特征的平均数、中位数、众数、最大值、最小值、固定值等作为填充。
 
 如果空值是数值属性，就使用该属性在其他所有对象的取值的平均值来填充该缺失的属性值.如果空值是非数值属性，就根据统计学中的众数原理，用该属性在其他所有对象出现频率最高的值来补齐该缺失的属
@@ -107,7 +106,7 @@ $$\text{minmax}(x_{ij}^{'}) = \frac{x_{ij} - \text{min}_k \mathbf{x}_{ik}} {\tex
 | robust scaling |  sklearn.preprocessing.robust_scale  | |
 
 
-* **python实现实例** 
+**python实现实例** 
 
 下面我们以min-max scaling为例，说明如何利用python完成归一化。
 > 在sklearn当中，我们使用`preprocessing.MinMaxScaler`来实现这个功能。`MinMaxScaler`有一个重要参数，`feature_range`，希望把数据压缩到的范围，默认是[0,1]。
