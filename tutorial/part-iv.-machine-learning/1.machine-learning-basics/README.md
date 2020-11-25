@@ -51,8 +51,8 @@
 > * 模型评估
 
 * 癌症预测
-> * 问题描述：我们根据理想的癌症数据集进行癌症特异基因筛选和癌症预测。数据集有502个正常人，498个HCC病人，6个基因，分别为geneA,geneB，geneC,geneD,geneE,geneF。我们需要找到预测效果最佳的3个基因组合，并训练模型用于癌症预测。
-> * 数据情况：数据可以在这里获取。
+> * 问题描述：我们根据BreastCance癌症数据集进行特征筛选和预测。数据集有458个良性（benign）样本和241个恶性（malignant）样本，包括Cl.thickness，Cell.size，Cell.shape，Marg.adhesion，Epith.c.size，Bare.nuclei，Bl.cromatin，Normal.nucleoli，Mitoses等9个特征。我们需要找到预测效果最佳的3个特征组合，并训练模型用于预测。
+> * 数据情况：数据可以在[这里](https://cloud.tsinghua.edu.cn/f/61b944d6d6334f6092f5/)获取。
 
 ## 3\) More Reading
 
