@@ -64,8 +64,7 @@ Bedtools是由犹他⼤学昆兰实验室开发的基因组算法⼯具集，它
 ### 2.1\) bedtools intersect
 
 它的作用是比较两个或多个BED/BAM/VCF/GFF，然后找它们重叠的区域（就是指至少存在1个公共的碱基）
-![8dd32ec1878510d60addbc83ccb65439.png](evernotecid://58A46CB2-04A5-4F32-9233-277C274EDE1B/appyinxiangcom/19737026/ENResource/p475)
-![f54dd65f091fcb96d07bd02e1ef0184f.png](evernotecid://58A46CB2-04A5-4F32-9233-277C274EDE1B/appyinxiangcom/19737026/ENResource/p476)
+![](bedtools_1.png)
 
 * 没有参数：简单的返回A和B共有的区域
 * -wa参数：把原始A文件的坐标输出来
@@ -152,7 +151,7 @@ chr1	788863	789211	CpG:_28	chr1	788770	794826	NR_047519_exon_5_0_chr1_788771_f	0
 ### 2.2\) bedtools merge
 许多数据集的基因组feature坐标经常是连续的，就像下图的蓝色部分于是可以把这些连续的基因组小区间连接起来，拼成一个连续的大区间。注意bedtools merge需要拼接的输入文件（bed/gff/vcf，必须是排序（sort）过的。
 
-![763551cc22f11487ec3bf137410bfca5.png](evernotecid://58A46CB2-04A5-4F32-9233-277C274EDE1B/appyinxiangcom/19737026/ENResource/p477)
+![](bedtools_2.png)
 
 以exon.bed为例，区间是有重叠的，因此它们可以进行merge。
 ```
