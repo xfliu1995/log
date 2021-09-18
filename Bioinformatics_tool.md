@@ -10,11 +10,11 @@
 docker images的下载链接如[附表](https://lulab2.gitbook.io/teaching/appendix/appendix-iv.-teaching)所示，加载完我们提供的image后，文件都已经准备好了，可以这样查看：
 
 ```
-docker load -i bioinfo_tools.tar.gz
+docker load -i bioinfo_tool.tar.gz
 
-docker run -dt --name bioinfo_tools --restart unless-stopped -v ~/Downloads/data:/data xfliu1995/bioinfo_tools:1.0
+docker run -it --name bioinfo_tool -h bioinfo --restart unless-stopped  bioinfo_tool:v1
 
-cd /home/test/bioinfo_tools
+cd /bioinfo_tools
 ```
 
 > 本教程docker使用方式：
